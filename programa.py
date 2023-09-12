@@ -63,7 +63,6 @@ def actualizar(aula):
 
 @app.route('/actualizar/datos', methods=['post'])
 def actualizar_datos():
-
     id = request.form['aula']
     descripcion = request.form['descripcion']
     capacidad = request.form['capacidad']
@@ -71,9 +70,28 @@ def actualizar_datos():
     audiovisual = request.form['audiovisual']
     usuario = request.form['usuario']
 
-    Elcrud.actualizar_datos([id, descripcion, capacidad, id_edificio, audiovisual, usuario])
+    # Agregar instrucciones de impresión para verificar los valores
+    print("ID:", id)
+    print("Descripcion:", descripcion)
+    print("Capacidad:", capacidad)
+    print("ID Edificio:", id_edificio)
+    print("Audiovisual:", audiovisual)
+    print("Usuario:", usuario)
+
+    # Añadir instrucciones de registro para la consulta SQL
+    sql = f"UPDATE aulas SET descripcion = '{descripcion}', capacidad = {capacidad}, idEdificio = '{id_edificio}', equipoAudiovisual = {audiovisual}, usuario = '{usuario}' WHERE idAula = '{id}'"
+    print("SQL Query:", sql)
+
+    try:
+        Elcrud.actualizar_datos([id, descripcion, capacidad, id_edificio, audiovisual, usuario])
+        # Agregar un registro para verificar que se haya ejecutado la actualización correctamente
+        print("Actualización de datos exitosa")
+    except Exception as e:
+        # Manejar cualquier excepción que pueda ocurrir durante la actualización
+        print("Error durante la actualización:", str(e))
 
     return redirect('/')
+
 
 
 

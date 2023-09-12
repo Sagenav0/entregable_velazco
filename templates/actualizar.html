@@ -32,8 +32,8 @@
                         <form action="/actualizar/datos" method="post">
     
                             <div class="mb-3">
-                                <label for="aula" class="form-label">ID aula: {{actualizar[0]}}</label>
-                                <input type="text" hidden class="form-control" name="aula" id="aula" aria-describedby="helpId" placeholder="Digite el ID del aula">
+                                <label for="aula" class="form-label">ID aula:</label>
+                                <input type="text" class="form-control" name="aula" id="aula" aria-describedby="helpId" value="{{actualizar[0]}}" readonly placeholder="Digite el ID del aula">
                             </div>
     
                             <div class="mb-3">
@@ -47,8 +47,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="edificio" class="form-label">ID edificio: {{actualizar[3]}}</label>
-                                <input type="text"hidden value="{{actualizar[3]}}" class="form-control" name="edificio" id="edificio" aria-describedby="helpId" placeholder="Digite el ID del edifico donde esta el aula">
+                                <label for="edificio" class="form-label">ID edificio:</label>
+                                <input type="text" readonly value="{{actualizar[3]}}" class="form-control" name="edificio" id="edificio" aria-describedby="helpId" placeholder="Digite el ID del edifico donde esta el aula">
 
                             </div>
 

@@ -38,6 +38,7 @@ class Crud:
     
     def actualizar_datos(self,datos):
         
-        sql = f"UPDATE aulas SET descripcion = '{datos[1]}', capacidad = {datos[2]}, idEdificio = '{datos[3]}', equipoAudiovisual = {datos[4]}, usuario = '{datos[5]}' WHERE idAula = '{datos[0]}'"
-        self.cursor.execute(sql)
+        sql = "UPDATE aulas SET descripcion = %s, capacidad = %s, idEdificio = %s, equipoAudiovisual = %s, usuario = %s WHERE idAula = %s"
+        self.cursor.execute(sql, (datos[1], datos[2], datos[3], datos[4], datos[5], datos[0]))
         self.conexion.commit()
+        print("Actualización de base exitosa")

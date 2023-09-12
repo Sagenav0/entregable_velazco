@@ -103,17 +103,17 @@
                                 <td>{{aulas[4]}}</td>
                                 <td>{{aulas[5]}}</td>
                                 <td>
-                                    <form action="/borrar/{{aulas[0]}}" method="post">
-                                    <input value="{{aulas[0]}}" type="hidden" name="aula" id="aula" >
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-    
-                                    </form>
-    
+                                    <div class="btn-group">
+                                    
+                                        <form action="/borrar/{{aulas[0]}}" method="post">
+                                        <input value="{{aulas[0]}}" type="hidden" name="aula" id="aula" >
+                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+        
+                                        </form>
+        
+                                        <a  class="btn btn-success" href="/actualizar/{{aulas[0]}}">Editar</a>                   
+                                    </div>
                                 </td>
-                                <td>
-                                    <a class="btn btn-success" href="/actualizar/{{aulas[0]}}">Editar</a>
-                                </td>
-    
                             </tr>
     
                             {%endfor%}
@@ -127,20 +127,6 @@
         </div>
     </div>
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
